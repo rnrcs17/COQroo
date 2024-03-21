@@ -1,0 +1,112 @@
+:root {
+  --primary-color: #EE283F;
+  --secondary-color: #FCC513;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  background-color: var(--primary-color);
+}
+
+body {
+  width: 350px;
+  height: auto;
+  background-color: transparent;
+  color: white;
+  margin: 8px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+hr {
+  border-top: 1px solid white;
+}
+
+.primary-color {
+  color: var(--primary-color);
+}
+
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 23px;
+  /* color: var(--secondary-color); */
+}
+
+.container {
+  padding: 0px 20px;
+}
+
+table {
+  font-size: 15px;
+}
+
+a {
+  color: white;
+}
+
+.social-link {
+  cursor: pointer;
+}
+
+a:hover,
+.social-link:hover {
+  transform: scale(1.5);
+  transition: 500ms;
+  color: var(--secondary-color);
+}
+
+#market-stats-button,
+#user-stats-button,
+#feedback-button {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#market-stats-button:hover,
+#user-stats-button:hover,
+#feedback-button:hover {
+  border-color: white;
+}
+
+.user-input {
+  height: 25px;
+  border: 2px solid white;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  animation-name: spin;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+footer {
+  margin-bottom: -20px;
+  font-size: 12px;
+}

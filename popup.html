@@ -1,0 +1,155 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>COQroo - COQ Inu's Real-Time Stats</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="popup.css">
+</head>
+
+<body style="width: 500px; height: 584px">
+    <div class="text-right">
+        <span style="font-size: 10px;" id="last-updated"></span>
+    </div>
+    
+    <div class="row">
+        <div class="col-2">
+            <img src="/images/main.png" alt="COQroo" width="54" height="54">
+        </div>
+        <div class="col-10 mt-3 text-center">
+            <div class="title"><b>COQroo</b> <span style="font-size: medium;">- COQ Inu's Real-Time Stats <span
+                        style="font-size: 10px;">v1.6</span></span></div>
+        </div>
+    </div>
+
+    <div class="container text-center mt-3">
+        <button type="button" id="market-stats-button" class="btn">Market Stats</button>
+        <button type="button" id="user-stats-button" class="btn ml-2">My COQ</button>
+        <button type="button" id="feedback-button" class="btn ml-2">Feedback</button>
+    </div>
+    <!-- Market Stats section -->
+    <div class="container" id="market-stats">
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col" class="secondary-color">Market Cap Rank</th>
+                    <th scope="col" id="market-cap-rank"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="secondary-color">Market Cap</th>
+                    <td id="market-cap-value"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">Current Price</th>
+                    <td id="current-price-value"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">Volume (24h)</th>
+                    <td colspan="2" id="24h-volume"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">24 hour high/Low</th>
+                    <td colspan="2" id="24h-high-low-value"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">All time High</th>
+                    <td colspan="2" id="alltime-high-value"></td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">All time Low</th>
+                    <td colspan="2" id="alltime-low-value"></td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="text-center" id="total-token"></div>
+    </div>
+
+    <!-- User Stats section -->
+    <div class="container" id="user-stats" style="display: none;">
+        <table class="table mt-4">
+            <thead>
+                <tr>
+                    <th scope="col" class="secondary-color">My COQs</th>
+                    <th scope="col">
+                        <input type="text" class="form-control user-input" placeholder="" id="user-coq-count">
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row" class="secondary-color">Average Cost/COQ</th>
+                    <td class="h5"><input type="text" class="form-control user-input" placeholder="" id="user-avg-cost">
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">My Cost</th>
+                    <td id="user-coq-cost" class="">$0.00 USD</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">Current worth</th>
+                    <td id="user-coq-worth" class="">$0.00 USD</td>
+                </tr>
+                <tr>
+                    <th scope="row" class="secondary-color">ATH worth</th>
+                    <td id="user-ath-worth" class="">$0.00 USD</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+        <div class="container text-center h5 mt-5" id="meme-section"></div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="fixed-bottom text-center py-3">
+        <div class="mt-4 text-center">
+            <!-- X -->
+            <a href="https://twitter.com/coqinuavax?lang=en" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-twitter-x social-link" viewBox="0 0 16 16">
+                    <path
+                        d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z" />
+                </svg>
+            </a>
+
+            <!-- Discord -->
+            <a href="https://discord.com/invite/5Nde2b9B3m" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-discord social-link ml-5" viewBox="0 0 16 16">
+                    <path
+                        d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612" />
+                </svg>
+            </a>
+
+            <!-- Website -->
+            <a href="https://www.coqinu.com/" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-globe-americas social-link ml-5" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0M2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484q-.121.12-.242.234c-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
+                </svg>
+            </a>
+
+            <!-- Contract -->
+            <a href="https://snowtrace.io/token/0x420fca0121dc28039145009570975747295f2329" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-coin social-link ml-5" viewBox="0 0 16 16">
+                    <path
+                        d="M5.5 9.511c.076.954.83 1.697 2.182 1.785V12h.6v-.709c1.4-.098 2.218-.846 2.218-1.932 0-.987-.626-1.496-1.745-1.76l-.473-.112V5.57c.6.068.982.396 1.074.85h1.052c-.076-.919-.864-1.638-2.126-1.716V4h-.6v.719c-1.195.117-2.01.836-2.01 1.853 0 .9.606 1.472 1.613 1.707l.397.098v2.034c-.615-.093-1.022-.43-1.114-.9zm2.177-2.166c-.59-.137-.91-.416-.91-.836 0-.47.345-.822.915-.925v1.76h-.005zm.692 1.193c.717.166 1.048.435 1.048.91 0 .542-.412.914-1.135.982V8.518z" />
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                    <path d="M8 13.5a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11m0 .5A6 6 0 1 0 8 2a6 6 0 0 0 0 12" />
+                </svg>
+            </a>
+        </div>
+        <p class="mt-2"><b class="secondary-color">$COQ</b> (Coq Inu) - The <b class="secondary-color">#1 community
+                coin</b> of the Chad Chain.</p>
+    </footer>
+    <script src="popup.js"></script>
+</body>
+
+</html>
